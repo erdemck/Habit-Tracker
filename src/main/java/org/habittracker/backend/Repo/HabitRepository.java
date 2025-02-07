@@ -44,4 +44,6 @@ public class HabitRepository  implements IRepository<Habit> {
     public List<Habit> findAll() {
         return em.createQuery("SELECT h FROM Habit h").getResultList();
     }
+
+
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 enum RepeatCycle{
@@ -39,6 +40,15 @@ public class Habit {
     @JoinColumn(name = "user_id")
     @JsonIgnoreProperties("habits")
     private AppUser user;
+
+    @Column(name = "current_streak")
+    private int currentStreak = 0;
+
+    @Column(name = "best_streak")
+    private int bestStreak = 0;
+
+    @Column(name = "last_completed_date")
+    private LocalDate lastCompletedDate;
 
     public Habit(String name, String description) {
         this.name = name;
@@ -87,5 +97,28 @@ public class Habit {
         this.repeatCycle = repeatCycle;
     }
 
+    public int getCurrentStreak() {
+        return currentStreak;
+    }
+
+    public void setCurrentStreak(int currentStreak) {
+        this.currentStreak = currentStreak;
+    }
+
+    public int getBestStreak() {
+        return bestStreak;
+    }
+
+    public void setBestStreak(int bestStreak) {
+        this.bestStreak = bestStreak;
+    }
+
+    public LocalDate getLastCompletedDate() {
+        return lastCompletedDate;
+    }
+
+    public void setLastCompletedDate(LocalDate lastCompletedDate) {
+        this.lastCompletedDate = lastCompletedDate;
+    }
 }
 

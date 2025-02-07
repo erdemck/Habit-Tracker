@@ -26,4 +26,29 @@ public class HabitController {
     public List<Habit> getAllHabits() {
         return habitService.getAllHabits();
     }
+
+    @GetMapping("/{id}")
+    public Habit getHabitById(@PathVariable Long id) {
+        return habitService.getHabit(id);
+    }
+
+    @PutMapping("/{id}")
+    public Habit updateHabit(@RequestBody Habit habit) {
+        return habitService.updateHabit(habit);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteHabit(@RequestBody Habit habit) {
+        habitService.deleteHabit(habit);
+    }
+
+    @PostMapping("/{id}/complete")
+    public Habit completeHabit(@PathVariable Long id) {
+        return habitService.completeHabit(id);
+    }
+
+    @PostMapping("/{id}/reset-streak")
+    public void resetStreak(@PathVariable Long id) {
+        habitService.resetStreak(id);
+    }
 }

@@ -24,8 +24,18 @@ public class UserService {
         return UserRepository.findAll();
     }
 
-    public AppUser findById(Long id) {
+    public AppUser getUser(Long id) {
         return UserRepository.findById(id);
     }
+
+    public AppUser updateUser(AppUser user) {
+        return UserRepository.update(user);
+    }
+
+    public void deleteUser(AppUser user) {
+        UserRepository.delete(user);
+    }
+    
+
 }
 
