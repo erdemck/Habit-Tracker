@@ -2,7 +2,6 @@ package org.habittracker.backend.Controller;
 
 import org.habittracker.backend.Service.UserService;
 import org.habittracker.backend.model.AppUser;
-import org.habittracker.backend.model.Habit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

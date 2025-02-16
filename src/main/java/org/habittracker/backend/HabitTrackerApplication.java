@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ArtifactApplication {
+public class HabitTrackerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ArtifactApplication.class, args);}
+        SpringApplication.run(HabitTrackerApplication.class, args);}
 
 }
